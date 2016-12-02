@@ -24,19 +24,6 @@ print("minPixelsChanged=",minPixelsChanged)
 print ('Creating in-memory stream')
 
 
-def signal_handler(signum, frame):
-        global resolution, annotate
-        print 'Signal handler called with signal', signum
-        config = load_xml()
-        lck.acquire()
-       
-        resolution = config['resolution']
-        annotate = config['annotate']
-        lck.release()
-
-        
-
-
 def detect_motion(camera):
     step = 1  
     numImages = 1 
